@@ -20,7 +20,7 @@ const verificarToken = async (req, res, next) => {
       await conexaoPg.query(textoQuery, valoresQuery);
 
     if (quantidadeUsuarios === 0) {
-      return res.status(401).json({ mensagem: "Usuário inválido" });
+      return res.status(401).json({ mensagem: "Usuário inválido" })
     }
 
     req.usuarioLogado = usuariosLogados[0];
@@ -28,7 +28,7 @@ const verificarToken = async (req, res, next) => {
     next();
   } catch (error) {
     console.log(error.message);
-    return res.status(500).json({ mensagem: "Erro interno no servidor" });
+    return res.status(500).json({ mensagem: "Erro interno no servidor" })
   }
 };
 
